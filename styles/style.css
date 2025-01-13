@@ -24,6 +24,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --offwhite-color: #f1f1f1;
+  --light-blue-color: #1976d2;
 }
 
 #main-doc article {
@@ -71,7 +74,7 @@ a:hover {
 }
 
 .search-container input[type="text"] {
-  color: #f1f1f1;
+  color: var(--offwhite-color);
   background-color: #19192e;
   height: 35px;
   width: 100%;
@@ -83,14 +86,14 @@ a:hover {
 .search-container button {
   padding: 0 0 0 10px;
   background-color: #19192e; /* Button color */
-  color: #f1f1f1; /* Text color */
+  color: var(--offwhite-color); /* Text color */
   border: none; /* Remove border */
   border-radius: 15px 0 0 15px; /* Rounded corners for right side */
   cursor: pointer; /* Pointer cursor on hover */
 }
 
 .search-container button:hover {
-  background-color: #1976d2; /* Darker shade on hover */
+  background-color: var(--light-blue-color); /* Darker shade on hover */
 }
 
 .search-container input[type="text"]:focus {
@@ -111,15 +114,15 @@ a:hover {
 }
 
 #side-navbar ul a:link {
-  color: #f1f1f1;
+  color: var(--offwhite-color);
 }
 
 #side-navbar ul a:visited {
-  color: #f1f1f1; /* Visited link */
+  color: var(--offwhite-color); /* Visited link */
 }
 
 #side-navbar ul a:hover {
-  color: #1976d2; /* Visited link */
+  color: var(--light-blue-color); /* Visited link */
 }
 
 @media (max-width: 600px) {
