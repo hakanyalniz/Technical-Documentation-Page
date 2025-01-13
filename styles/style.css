@@ -26,8 +26,36 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-#main-doc {
-  display: flex;
+#main-doc article {
+  margin-left: 320px;
+}
+
+/* Header styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: normal;
+  margin-bottom: 10px; /* Add space below headings */
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: #007bff; /* Blue color for links */
+  cursor: pointer;
+}
+
+a:hover {
+  color: #0056b3; /* Darker blue on hover */
 }
 
 .search-container {
@@ -39,10 +67,11 @@ body {
   display: flex;
   justify-content: space-around;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .search-container input[type="text"] {
-  color: white;
+  color: #f1f1f1;
   background-color: #19192e;
   height: 35px;
   width: 100%;
@@ -54,7 +83,7 @@ body {
 .search-container button {
   padding: 0 0 0 10px;
   background-color: #19192e; /* Button color */
-  color: white; /* Text color */
+  color: #f1f1f1; /* Text color */
   border: none; /* Remove border */
   border-radius: 15px 0 0 15px; /* Rounded corners for right side */
   cursor: pointer; /* Pointer cursor on hover */
@@ -68,30 +97,29 @@ body {
   outline: none; /* Remove outline on focus */
 }
 
-/* Header styles */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 10px; /* Add space below headings */
+#side-navbar {
+  flex-basis: 40%;
+  position: fixed;
 }
 
-h1 {
-  font-size: 2rem;
+#side-navbar ul {
+  list-style-type: none;
 }
 
-/* Links */
-a {
-  text-decoration: none; /* Remove underline from links */
-  color: #007bff; /* Blue color for links */
-  cursor: pointer;
+#side-navbar ul li {
+  margin-bottom: 10px;
 }
 
-a:hover {
-  color: #0056b3; /* Darker blue on hover */
+#side-navbar ul a:link {
+  color: #f1f1f1;
+}
+
+#side-navbar ul a:visited {
+  color: #f1f1f1; /* Visited link */
+}
+
+#side-navbar ul a:hover {
+  color: #1976d2; /* Visited link */
 }
 
 @media (max-width: 600px) {
