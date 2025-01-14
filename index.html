@@ -60,13 +60,37 @@
             variable named message.
           </p>
 
-          <code>
-            <div><span>// Accessing the property 'toLowerCase'</span></div>
-            <div><span>// on 'message' and then calling it</span></div>
-            <div><span>message.toLowerCase();</span></div>
-            <div><span>// Calling 'message'</span></div>
-            <div><span>message();</span></div>
-          </code>
+          <div class="code-wrapper">
+            <div class="code-color">
+              <code>
+                <div>
+                  <span style="color: var(--code-comment)"
+                    >// Accessing the property 'toLowerCase'</span
+                  >
+                </div>
+                <div>
+                  <span style="color: var(--code-comment)"
+                    >// on 'message' and then calling it</span
+                  >
+                </div>
+                <div>
+                  <span style="color: var(--code-variable)">message</span
+                  ><span>.</span
+                  ><span style="color: var(--code-property)">toLowerCase</span
+                  ><span>();</span>
+                </div>
+                <div>
+                  <span style="color: var(--code-comment)"
+                    >// Calling 'message'</span
+                  >
+                </div>
+                <div>
+                  <span style="color: var(--code-property)">message</span
+                  ><span>();</span>
+                </div>
+              </code>
+            </div>
+          </div>
 
           <p>
             If we break this down, the first runnable line of code accesses a
@@ -96,9 +120,19 @@
 
           <p>Let’s say message was defined in the following way.</p>
 
-          <code>
-            <div><span>const message = "Hello World!"; </span></div>
-          </code>
+          <div class="code-wrapper">
+            <div class="code-color">
+              <code>
+                <div>
+                  <span style="color: var(--code-declaration)">const</span>
+                  <span style="color: var(--code-variable)">message</span>
+                  <span> = </span>
+                  <span style="color: var(--code-string)">"Hello World!"</span
+                  ><span>;</span>
+                </div>
+              </code>
+            </div>
+          </div>
 
           <p>
             As you can probably guess, if we try to run message.toLowerCase(),
@@ -110,9 +144,13 @@
             JavaScript, you’ll know this fails with an exception:
           </p>
 
-          <code>
-            <div><span>TypeError: message is not a function </span></div>
-          </code>
+          <div class="code-wrapper">
+            <div class="code-color">
+              <code>
+                <div><span>TypeError: message is not a function </span></div>
+              </code>
+            </div>
+          </div>
 
           <p>It’d be great if we could avoid mistakes like this.</p>
 
@@ -132,11 +170,28 @@
             function:
           </p>
 
-          <code>
-            <div><span>function fn(x) {</span></div>
-            <div><span> return x.flip();</span></div>
-            <div><span> }</span></div>
-          </code>
+          <div class="code-wrapper">
+            <div class="code-color">
+              <code>
+                <div>
+                  <span style="color: var(--code-declaration)">function</span
+                  ><span style="color: var(--code-property)"> fn</span
+                  ><span>(</span
+                  ><span style="color: var(--code-declaration)">x</span
+                  ><span>) {</span>
+                </div>
+                <div>
+                  <span>&nbsp</span
+                  ><span style="color: var(--code-return)"> return</span
+                  ><span style="color: var(--code-declaration)"> x</span
+                  ><span>.</span
+                  ><span style="color: var(--code-property)">flip</span
+                  ><span>();</span>
+                </div>
+                <div><span> }</span></div>
+              </code>
+            </div>
+          </div>
 
           <p>
             We can observe by reading the code that this function will only work
