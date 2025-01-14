@@ -1,3 +1,13 @@
+<!-- 
+Disclaimer:
+The text included in this document, originating from TypeScript documentation or related sources, 
+is used solely for illustrative and placeholder purposes. 
+It is not intended to convey any proprietary or authoritative information about TypeScript. 
+All rights and ownership of the original text belong to its respective authors and copyright holders. 
+For official information, please refer to the TypeScript documentation. 
+https://www.typescriptlang.org/docs/handbook/2/basic-types.html
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,9 +48,6 @@
           >
           <a href="#Types_for_Tooling" class="nav-link"
             ><li>Types for Tooling</li></a
-          >
-          <a href="#tsc_the_TypeScript_compiler" class="nav-link"
-            ><li>tsc , the TypeScript compiler</li></a
           >
           <a href="#Emitting_with_Errors" class="nav-link"
             ><li>Emitting with Errors</li></a
@@ -261,7 +268,7 @@
                       text-decoration: underline;
                       text-decoration-style: wavy;
                       text-decoration-color: #9e2828a4;
-                      text-underline-offset: 2px;
+                      text-underline-offset: 3px;
                     "
                     >message</span
                   ><span>();</span>
@@ -279,18 +286,125 @@
         </section>
         <section class="main-section" id="Non-expection_Failures">
           <h2>Non-exception Failures</h2>
+
+          <p>
+            So far we’ve been discussing certain things like runtime errors -
+            cases where the JavaScript runtime tells us that it thinks something
+            is nonsensical. Those cases come up because the ECMAScript
+            specification has explicit instructions on how the language should
+            behave when it runs into something unexpected.
+          </p>
+
+          <p>
+            For example, the specification says that trying to call something
+            that isn’t callable should throw an error. Maybe that sounds like
+            “obvious behavior”, but you could imagine that accessing a property
+            that doesn’t exist on an object should throw an error too. Instead,
+            JavaScript gives us different behavior and returns the value
+            undefined:
+          </p>
+
+          <p>
+            Ultimately, a static type system has to make the call over what code
+            should be flagged as an error in its system, even if it’s “valid”
+            JavaScript that won’t immediately throw an error. In TypeScript, the
+            following code produces an error about location not being defined:
+          </p>
+
+          <p>
+            While sometimes that implies a trade-off in what you can express,
+            the intent is to catch legitimate bugs in our programs. And
+            TypeScript catches a lot of legitimate bugs.
+          </p>
         </section>
         <section class="main-section" id="Types_for_Tooling">
           <h2>Types for Tooling</h2>
-        </section>
-        <section class="main-section" id="tsc_the_TypeScript_compiler">
-          <h2>tsc , the TypeScript compiler</h2>
+
+          <p>
+            TypeScript can catch bugs when we make mistakes in our code. That’s
+            great, but TypeScript can also prevent us from making those mistakes
+            in the first place.
+          </p>
+
+          <p>
+            The type-checker has information to check things like whether we’re
+            accessing the right properties on variables and other properties.
+            Once it has that information, it can also start suggesting which
+            properties you might want to use.
+          </p>
+
+          <p>
+            That means TypeScript can be leveraged for editing code too, and the
+            core type-checker can provide error messages and code completion as
+            you type in the editor. That’s part of what people often refer to
+            when they talk about tooling in TypeScript.
+          </p>
+
+          <p>
+            TypeScript takes tooling seriously, and that goes beyond completions
+            and errors as you type. An editor that supports TypeScript can
+            deliver “quick fixes” to automatically fix errors, refactorings to
+            easily re-organize code, and useful navigation features for jumping
+            to definitions of a variable, or finding all references to a given
+            variable. All of this is built on top of the type-checker and is
+            fully cross-platform, so it’s likely that your favorite editor has
+            TypeScript support available.
+          </p>
         </section>
         <section class="main-section" id="Emitting_with_Errors">
           <h2>Emitting with Errors</h2>
+
+          <p>
+            One thing you might not have noticed from the last example was that
+            our hello.js file changed again. If we open that file up then we’ll
+            see that the contents still basically look the same as our input
+            file. That might be a bit surprising given the fact that tsc
+            reported an error about our code, but this is based on one of
+            TypeScript’s core values: much of the time, you will know better
+            than TypeScript.
+          </p>
+
+          <p>
+            To reiterate from earlier, type-checking code limits the sorts of
+            programs you can run, and so there’s a tradeoff on what sorts of
+            things a type-checker finds acceptable. Most of the time that’s
+            okay, but there are scenarios where those checks get in the way. For
+            example, imagine yourself migrating JavaScript code over to
+            TypeScript and introducing type-checking errors. Eventually you’ll
+            get around to cleaning things up for the type-checker, but that
+            original JavaScript code was already working! Why should converting
+            it over to TypeScript stop you from running it?
+          </p>
+
+          <p>
+            So TypeScript doesn’t get in your way. Of course, over time, you may
+            want to be a bit more defensive against mistakes, and make
+            TypeScript act a bit more strictly. In that case, you can use the
+            noEmitOnError compiler option. Try changing your hello.ts file and
+            running tsc with that flag:
+          </p>
         </section>
       </article>
+      <footer class="footer">
+        <div class="footer-container">
+          <p>
+            The text included in this document, originating from TypeScript
+            documentation or related sources, is used solely for illustrative
+            and placeholder purposes. It is not intended to convey any
+            proprietary or authoritative information about TypeScript. All
+            rights and ownership of the original text belong to its respective
+            authors and copyright holders. For official information, please
+            refer to the
+            <a
+              href="https://www.typescriptlang.org/docs/handbook/2/basic-types.html"
+              target="_blank"
+              >TypeScript documentation.</a
+            >
+          </p>
+        </div>
+      </footer>
     </main>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
