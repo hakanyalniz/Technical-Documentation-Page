@@ -49,6 +49,11 @@ h1 {
   font-weight: bold;
 }
 
+.main-section h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
 /* Links */
 a {
   text-decoration: none; /* Remove underline from links */
@@ -144,7 +149,7 @@ p {
   font-size: 13px;
   line-height: 24px;
 
-  padding: 18px 5px;
+  padding: 18px 15px;
   margin: 10px 0;
 
   background-color: black;
@@ -152,6 +157,12 @@ p {
 
   border: none;
   border-radius: 10px;
+}
+
+.code-error {
+  padding-left: 0;
+  background-color: #5f131363;
+  border-left: 4px solid #9e2828a4; /* Adjust width, style, and color as needed */
 }
 
 .main-section ul {
